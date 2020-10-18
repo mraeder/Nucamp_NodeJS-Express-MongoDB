@@ -1,13 +1,13 @@
-const http = require('http');
+const http = require('http');   // import HTTP module with req function 
 
-const hostname = 'localhost';
-const port = 3000;  
+const hostname = 'localhost';  // set host name to local host 
+const port = 3000;              // set port to local host 3000
 
 const path = require('path');
 const fs = require('fs');
 
-const server = http.createServer((req, res) => {
-    console.log(`Request for ${req.url} by method ${req.method}`);
+const server = http.createServer((req, res) => {   // set up the server, basic server object, taking request handler callback function, 2 obj as parameters =(req, res) as an arrow function, req handler is called EVERY time server receives request
+    console.log(`Request for ${req.url} by method ${req.method}`);  
 
     if (req.method === 'GET') {
         let fileUrl = req.url;
